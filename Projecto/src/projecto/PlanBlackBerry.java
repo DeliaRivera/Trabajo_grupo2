@@ -15,10 +15,10 @@ public class PlanBlackBerry extends Plan {
     protected String pin;
     protected ArrayList<String> bbm;
 
-    public PlanBlackBerry(String nombreCliente, int num,String pin,String bm) {
+    public PlanBlackBerry(String nombreCliente, int num,String pin) {
         super(nombreCliente, num);
         this.pin=pin;
-        this.bbm.add(bm);
+        bbm=new ArrayList<String>();
     }
 
     public String getPin() {

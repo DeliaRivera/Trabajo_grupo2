@@ -12,8 +12,8 @@ package projecto;
 public  class PlanIphone extends Plan {
     protected  String itunes_email;
     
-    public PlanIphone(String e){
-        super(" Laura ", 80);
+    public PlanIphone(String nombreCliente, int num,String e){
+        super(nombreCliente, num);
         this.itunes_email=e;
     }
 
