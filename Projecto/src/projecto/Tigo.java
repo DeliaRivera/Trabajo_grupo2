@@ -14,4 +14,40 @@ import java.util.ArrayList;
 public class Tigo {
     protected ArrayList<Plan> planes;
     
+    public void addPlan(int numtel, String nombre, String extra, String tipo){
+        
+        if(tipo.equals("iphone")){
+            planes.add(new PlanIphone(extra));
+        }
+      
+    }
+    public boolean busqueda(int numtel, String extra, String tipo){
+        
+        for(Plan bu: planes){
+            
+           if(bu instanceof PlanIphone){
+           
+              if(bu.getNum()==numtel)
+                  return true;
+              if(((PlanIphone)bu).getItunes_email().equalsIgnoreCase(extra)){
+                  return true;
+              
+              }
+           }
+           else{
+           
+               if(bu.getNum()==numtel)
+                  return true;
+               if(((PlanBlackBerry)bu).getPin().equalsIgnoreCase(extra)){
+                  return true;
+              
+              }
+           
+           }
+           return false;
+            
+        }
+        return false;
+    }
+    
 }
