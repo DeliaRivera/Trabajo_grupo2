@@ -14,13 +14,30 @@ import java.util.ArrayList;
 public class Tigo {
     protected ArrayList<Plan> planes;
     
-    public void addPlan(int numtel, String nombre, String extra, String tipo){
+    public void addPlan(int numtel,String nombre,String extra,String tipo){
         
-        if(tipo.equals("iphone")){
-            planes.add(new PlanIphone(extra));
+        if(!this.busqueda(numtel,extra,tipo)){
+        
+           if(tipo.equalsIgnoreCase("IPHONE")){
+        
+            planes.add(new PlanIphone(nombre,numtel,extra));
         }
-      
+        else{
+        
+            planes.add(new PlanBlackBerry(nombre,numtel,extra));
+        
+        }
+        
+        
+        }
+        
+     
+    
+    
+    
+    
     }
+
     public boolean busqueda(int numtel, String extra, String tipo){
         
         for(Plan bu: planes){
